@@ -24,16 +24,43 @@
 # print(sl.defangIPaddr(str))
 
 
-from longestCommonPrefix import Solution
-import time
+# from longestCommonPrefix import Solution
+# import time
+#
+# N = 20
+# start = time.time()
+# sl = Solution()
+# list = ["flower", "flow", "flight"]
+# list=["dog","racecar","car"]
+# for i in range(N):
+#     sl.longestCommonPrefix(list)
+#
+# print("time is %.5f"%((time.time()-start)*10000/N))
+# print(sl.longestCommonPrefix(list))
 
-N = 20
+import time
+from mergeTwoLists import *
+
+N = 1
 start = time.time()
 sl = Solution()
-list = ["flower", "flow", "flight"]
-list=["dog","racecar","car"]
-for i in range(N):
-    sl.longestCommonPrefix(list)
-
-print("time is %.5f"%((time.time()-start)*10000/N))
-print(sl.longestCommonPrefix(list))
+l1 = ListNode(0)
+l2 = ListNode(1)
+sp1 = l1
+sp2 = l2
+for i in range(1, 10):
+    sp1.next = ListNode(i)
+    sp2.next = ListNode(i + 1)
+    sp1 = sp1.next
+    sp2 = sp2.next
+l1 = ListNode(None)
+l2 = ListNode(None)
+# for i in range(N):
+#     sl.mergeTwoLists(l1, l2)
+print("time is %.5f" % ((time.time() - start) * 10000 / N))
+# print(sl.mergeTwoLists(list))
+l = sl.mergeTwoLists(l1, l2)
+while l.next is not None:
+    print(l.val)
+    l = l.next
+print(l.val)
