@@ -75,15 +75,28 @@
 # print("time is %.5f" % ((time.time() - start) * 10000 / N))
 # print(sl.countAndSay(n))
 
+# import time
+# from stringCompression import *
+# N = 20
+# chars = ["a", "a", "b", "b", "c", "c", "c"]
+# start = time.time()
+# sl = Solution()
+# for i in range(N):
+#     # sl.compress(chars)
+#     pass
+# print("time is %.5f" % ((time.time() - start) * 10000 / N))
+# print(sl.compress(chars))
+# print(chars)
+
+# not finished test function, solution is done
 import time
-from stringCompression import *
+from diameterOfBinaryTree import *
 N = 20
-chars = ["a", "a", "b", "b", "c", "c", "c"]
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# init tree
 start = time.time()
 sl = Solution()
 for i in range(N):
-    # sl.compress(chars)
-    pass
+    sl.diameterOfBinaryTree(chars)
 print("time is %.5f" % ((time.time() - start) * 10000 / N))
-print(sl.compress(chars))
-print(chars)
+print(sl.diameterOfBinaryTree(chars))
