@@ -64,14 +64,26 @@
 #     l = l.next
 # print(l.val)
 
-import time
-from countAndSay import *
+# import time
+# from countAndSay import *
+# N = 20
+# n = 30
+# start = time.time()
+# sl = Solution()
+# for i in range(N):
+#     sl.countAndSay(n)
+# print("time is %.5f" % ((time.time() - start) * 10000 / N))
+# print(sl.countAndSay(n))
 
+import time
+from stringCompression import *
 N = 20
-n = 30
+chars = ["a", "a", "b", "b", "c", "c", "c"]
 start = time.time()
 sl = Solution()
 for i in range(N):
-    sl.countAndSay(n)
+    # sl.compress(chars)
+    pass
 print("time is %.5f" % ((time.time() - start) * 10000 / N))
-print(sl.countAndSay(n))
+print(sl.compress(chars))
+print(chars)
