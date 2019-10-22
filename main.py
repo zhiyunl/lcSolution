@@ -101,17 +101,34 @@
 # print("time is %.5f" % ((time.time() - start) * 10000 / N))
 # print(sl.diameterOfBinaryTree(chars))
 
+# import time
+# from isPalindrome import *
+# start = time.time()
+# sl = Solution()
+# l1 = ListNode(0)
+# sp1 = l1
+# for i in [2, 1, 2, 1, 3, 1, 2, 1, 2]:
+#     sp1.next = ListNode(i)
+#     sp1 = sp1.next
+# l1 = l1.next
+# print("time is %.5f" % ((time.time() - start) * 10000))
+# # bo = sl.isPalindrome1(l1)
+# bo = sl.isPalindrome2(l1)
+# print(bo)
+
 import time
-from isPalindrome import *
+from reverseList import *
 start = time.time()
 sl = Solution()
 l1 = ListNode(0)
 sp1 = l1
-for i in [2, 1, 2, 1, 3, 1, 2, 1, 2]:
+for i in [1, 2, 3, 4, 5, 6, 7]:
     sp1.next = ListNode(i)
     sp1 = sp1.next
 l1 = l1.next
 print("time is %.5f" % ((time.time() - start) * 10000))
-# bo = sl.isPalindrome1(l1)
-bo = sl.isPalindrome2(l1)
-print(bo)
+l2 = sl.reverseList3(l1)
+while l2.next:
+    print(l2.val)
+    l2 = l2.next
+print(l2.val)
