@@ -89,14 +89,29 @@
 # print(chars)
 
 # not finished test function, solution is done
+# import time
+# from diameterOfBinaryTree import *
+# N = 20
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # init tree
+# start = time.time()
+# sl = Solution()
+# for i in range(N):
+#     sl.diameterOfBinaryTree(chars)
+# print("time is %.5f" % ((time.time() - start) * 10000 / N))
+# print(sl.diameterOfBinaryTree(chars))
+
 import time
-from diameterOfBinaryTree import *
-N = 20
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# init tree
+from isPalindrome import *
 start = time.time()
 sl = Solution()
-for i in range(N):
-    sl.diameterOfBinaryTree(chars)
-print("time is %.5f" % ((time.time() - start) * 10000 / N))
-print(sl.diameterOfBinaryTree(chars))
+l1 = ListNode(0)
+sp1 = l1
+for i in [2, 1, 2, 1, 3, 1, 2, 1, 2]:
+    sp1.next = ListNode(i)
+    sp1 = sp1.next
+l1 = l1.next
+print("time is %.5f" % ((time.time() - start) * 10000))
+# bo = sl.isPalindrome1(l1)
+bo = sl.isPalindrome2(l1)
+print(bo)
