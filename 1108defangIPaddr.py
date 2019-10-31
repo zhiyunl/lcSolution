@@ -14,10 +14,22 @@ class Solution:
         # faster without explicitly str()
         stack = ""
         for element in address:
-            if element=='.' :
-                stack+="[.]"
+            if element == '.':
+                stack += "[.]"
             else:
-                stack+=element
+                stack += element
         return stack
 
 
+import time
+
+N = 20
+start = time.time()
+for i in range(N):
+    sl = Solution()
+    # str = "192.168.1.1"
+    str = "0.0.0.1"
+    sl.defangIPaddr(str)
+
+print("time is %.5f" % ((time.time() - start) * 10000 / N))
+print(sl.defangIPaddr(str))

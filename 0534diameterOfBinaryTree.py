@@ -36,4 +36,15 @@ class Solution:
         dfs(root)
         return self.diameter - 1
 
+# TODO not finished test function, solution is done
+# import time
+# N = 20
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # init tree
+# start = time.time()
+# sl = Solution()
+# for i in range(N):
+#     sl.diameterOfBinaryTree(chars)
+# print("time is %.5f" % ((time.time() - start) * 10000 / N))
+# print(sl.diameterOfBinaryTree(chars))
 #

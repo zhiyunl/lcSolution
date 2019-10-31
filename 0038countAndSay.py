@@ -46,6 +46,14 @@ class Solution:
                     str += pre[i]
             return str
 
+
+import time
+
+start = time.time()
+sl = Solution()
+print(sl.countAndSay(12))
+print("time is %.5f" % ((time.time() - start) * 10000))
+
 # can use lookup table for integer to str concatenation
 # Cnt=[0,1,2,3,4,5,6,7,8,9] Cnt[cnt]
 # this can be faster than repr.

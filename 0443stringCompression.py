@@ -53,5 +53,12 @@ class Solution:
             cur += 1  # point to next element
         return ins
 
+
+chars = ["a", "a", "b", "b", "c", "c", "c"]
+sl = Solution()
+print(sl.compress(chars))
+print(chars)
+
+
 # another easy way to do int to digits is, for digit in str(int):
 #

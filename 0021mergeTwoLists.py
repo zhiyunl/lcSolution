@@ -40,9 +40,32 @@ class Solution:
             if l1 is None:
                 sp.next = l2
                 return l.next
-            else:
+            elif l2 is None:
                 sp.next = l1
                 return l.next
         return l.next
+
+
+import time
+
+N = 1
+start = time.time()
+sl = Solution()
+l1 = ListNode(0)
+l2 = ListNode(1)
+sp1 = l1
+sp2 = l2
+for i in range(1, 10):
+    sp1.next = ListNode(i)
+    sp2.next = ListNode(i + 1)
+    sp1 = sp1.next
+    sp2 = sp2.next
+print("time is %.5f" % ((time.time() - start) * 10000 / N))
+ll = sl.mergeTwoLists(l1, l2)
+while ll.next:
+    print(ll.val)
+    ll = ll.next
+print(ll.val)
+
 
 # faster than 88%, but more space needed

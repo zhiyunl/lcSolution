@@ -62,3 +62,19 @@ class Solution:
             slow = slow.next
             rev = rev.next
         return not rev
+
+
+import time
+
+start = time.time()
+sl = Solution()
+l1 = ListNode(0)
+sp1 = l1
+for i in [2, 1, 2, 1, 3, 1, 2, 1, 2]:
+    sp1.next = ListNode(i)
+    sp1 = sp1.next
+l1 = l1.next
+print("time is %.5f" % ((time.time() - start) * 10000))
+# bo = sl.isPalindrome1(l1)
+bo = sl.isPalindrome2(l1)
+print(bo)
