@@ -28,12 +28,20 @@ Example 5:
 
 Input: "{[]}"
 Output: true
+
+Idea:
+1. traditionally, use stack, push when (, [, {, pop when ),],}.
+2. if there is only '(' and ')', we can use a simple counting method
+    map '(' to +1, and ')' to -1.
+    linear scan counting, cnt should be non-negative along the way, zero when terminating.
+3. extend to all types. use cnt[3] to monitor each type ( [ {
+    consider "([)]", record the lru type, should be cleared first before clearing other type.
+    recursion is needed, which is not efficient.
 """
 
 
 class Solution:
     def isValid(self, s: str) -> bool:
-
         stack = []
         m = {
             '{': '}',
@@ -55,7 +63,20 @@ class Solution:
                         continue
         return len(stack) == 0
 
+    def isBalancedSimple(self, s: str) -> bool:
+        m = {
+            '(': 1,
+            ')': -1,
+        }
+        cnt = 0
+        for i in s:
+            cnt = cnt + m[i]
+            if cnt < 0:
+                return False
+        return cnt == 0
+
 
 teststr = "[(())]"
+paraTest = "(((())))"
 sol = Solution()
-print(sol.isValid(s=teststr))
+print(sol.isBalancedSimple(s=paraTest))
