@@ -67,5 +67,4 @@ while ll.next:
     ll = ll.next
 print(ll.val)
 
-
 # faster than 88%, but more space needed

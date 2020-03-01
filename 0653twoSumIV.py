@@ -26,14 +26,15 @@ Idea:
 corner case:
     1. empty tree
 """
+from helper import *
 
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 
 class Solution:
@@ -60,44 +61,13 @@ class Solution:
         self.root = root
         return self.preorder(root, k)
 
-    def stringToTreeNode(self, input):
-        input = input.strip()
-        input = input[1:-1]
-        if not input:
-            return None
 
-        inputValues = [s.strip() for s in input.split(',')]
-        root = TreeNode(int(inputValues[0]))
-        nodeQueue = [root]
-        front = 0
-        index = 1
-        while index < len(inputValues):
-            node = nodeQueue[front]
-            front = front + 1
-
-            item = inputValues[index]
-            index = index + 1
-            if item != "null":
-                leftNumber = int(item)
-                node.left = TreeNode(leftNumber)
-                nodeQueue.append(node.left)
-
-            if index >= len(inputValues):
-                break
-
-            item = inputValues[index]
-            index = index + 1
-            if item != "null":
-                rightNumber = int(item)
-                node.right = TreeNode(rightNumber)
-                nodeQueue.append(node.right)
-        return root
 
 
 if __name__ == '__main__':
     sl = Solution()
     nums = "[5, 3, 6, 2, 4, null, 7]"
     target = 4
-    root = sl.stringToTreeNode(nums)
+    root = stringToTreeNode(nums)
     tmp = sl.findTarget(root, target)
     print(tmp)
