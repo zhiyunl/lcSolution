@@ -3,6 +3,22 @@ Helper function for testing
 """
 
 
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+def list2ListNode(mystr):
+    l1 = ListNode(0)
+    sp1 = l1
+    for i in mystr:
+        sp1.next = ListNode(i)
+        sp1 = sp1.next
+    return l1.next
+
+
 # from LeetCode Playground
 # Definition for a binary tree node.
 class TreeNode:
